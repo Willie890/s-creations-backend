@@ -1,4 +1,4 @@
-// models/Product.js
+// server/models/Product.js
 const mongoose = require('mongoose');
 
 const ProductSchema = new mongoose.Schema({
@@ -8,7 +8,6 @@ const ProductSchema = new mongoose.Schema({
   category: String,
   sizes: [String],
   description: String,
-  inStock: { type: Boolean, default: true }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Product', ProductSchema);
