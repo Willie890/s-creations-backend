@@ -1,7 +1,11 @@
 // server/server.js
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
+const corsOptions = {
+  origin: ['http://localhost:3000', 'https://s-creations.netlify.app'],
+  credentials: true,
+};
+app.use(cors(corsOptions));
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
